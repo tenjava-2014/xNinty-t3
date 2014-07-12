@@ -25,7 +25,6 @@ public class LightningStormHandler {
 
 
 		}
-		instance.getLogger().info("starting storm");
 		new Thread(new StormPlayer(instance.getServer().getOnlinePlayers())).run();
 		
 	}
