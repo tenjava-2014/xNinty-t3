@@ -5,7 +5,7 @@ xNinty's ten.java submission
 
 This is a submission for the 2014 ten.java contest.
 
-- __Theme:__What sort of world generation could result in a completely different survival experience?
+- __Theme:__What random events can occur in Minecraft?
 - __Time:__ Time 3 (7/12/2014 14:00 to 7/13/2014 00:00 UTC)
 - __MC Version:__ 1.7.9 (latest Bukkit beta)
 - __Stream URL:__ None
@@ -28,6 +28,10 @@ Maven will download all required dependencies and build a ready-for-use plugin p
 Usage
 -----
 1.  Install plugin
-2.  (TBA)
+2.  You're good to go!  
+
+Current Possible Events
+-----
+None.  Working on some API stuff.
 
 
