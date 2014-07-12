@@ -2,10 +2,12 @@ package com.tenjava.entries.xNinty.t3.Threads;
 
 import java.util.Random;
 
+import org.bukkit.Bukkit;
+
 import com.tenjava.entries.xNinty.t3.DisasterUtils;
 import com.tenjava.entries.xNinty.t3.TenJava;
 
-public class LightningStormGenerator implements Runnable {
+public class DisasterGenerator implements Runnable {
 	
 	TenJava instance;
 
@@ -14,16 +16,22 @@ public class LightningStormGenerator implements Runnable {
 		Random r = new Random(instance.fetchConfigInt("LightningStormSeed"));
 		while(true) {
 			if (DisasterUtils.disasterCooldown == 0) {
-				int i = r.nextInt(instance.fetchConfigInt("LightningStormOdds"));
+				int i = r.nextInt(instance.fetchConfigInt("LightningStormOdds")); //LightningStormOdds is the odds of creating a lightning storm every tick
 				if (i == 1) {
-					//Create a Lightning Storm!
+					//TODO Create a Lightning Storm!
 				}
+			}
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				Bukkit.shutdown();
 			}
 		}
 		
 	}
 	
-	public LightningStormGenerator(TenJava t) {
+	public DisasterGenerator(TenJava t) {
 		this.instance = t;
 	}
 	

@@ -14,13 +14,20 @@ public class TenJava extends JavaPlugin {
 		
 	}
 	
+	/**
+	 * @param s
+	 * Path to fetch from
+	 * @return
+	 * Int in path s
+	 */
 	public int fetchConfigInt(String s) {
-		return getConfig().getInt(s);
+		return getConfig().getInt(s); //Fetch an int from the config
 	}
 	
 	public void putDisasterOnCooldown() {
 		DisasterUtils.disasterCooldown = getConfig().getInt("disasterCooldown");
 		DisasterUtils.changeCooldown = true;
+		//Create a cooldown and allow it to be changed
 	}
 
 	
