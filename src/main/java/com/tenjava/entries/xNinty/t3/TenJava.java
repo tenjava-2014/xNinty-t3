@@ -2,6 +2,8 @@ package com.tenjava.entries.xNinty.t3;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.tenjava.entries.xNinty.t3.Threads.DisasterGenerator;
+
 public class TenJava extends JavaPlugin {
 	
 	TenJava instance = this; //Allow other classes to access the methods
@@ -9,8 +11,11 @@ public class TenJava extends JavaPlugin {
 	// More complex onEnable possibly coming soon
 	public void onEnable() {
 		getLogger().info("Plugin enabled.");
+		getConfig().options().copyDefaults(true);
+		saveConfig();
 		DisasterUtils.changeCooldown = false;
 		DisasterUtils.disasterCooldown = 168000;
+		new Thread(new DisasterGenerator(instance)).run();
 		
 	}
 	

@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 
 import com.tenjava.entries.xNinty.t3.DisasterUtils;
 import com.tenjava.entries.xNinty.t3.TenJava;
+import com.tenjava.entries.xNinty.t3.Handlers.LightningStormHandler;
 
 public class DisasterGenerator implements Runnable {
 	
@@ -18,12 +19,15 @@ public class DisasterGenerator implements Runnable {
 			if (DisasterUtils.disasterCooldown == 0) {
 				int i = r.nextInt(instance.fetchConfigInt("LightningStormOdds")); //LightningStormOdds is the odds of creating a lightning storm every tick
 				if (i == 1) {
-					//TODO Create a Lightning Storm!
+					i = r.nextInt(1);
+					if (i == 1) {
+						new LightningStormHandler(instance);
+					}
 				}
 			}
 			
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(20);
 			} catch (InterruptedException e) {
 				Bukkit.shutdown();
 			}

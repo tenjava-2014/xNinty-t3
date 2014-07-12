@@ -1,20 +1,19 @@
 package com.tenjava.entries.xNinty.t3.Handlers;
 
-import java.util.Random;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import com.tenjava.entries.xNinty.t3.TenJava;
+import com.tenjava.entries.xNinty.t3.Threads.StormPlayer;
 
-public class LightningStormPlayer {
+public class LightningStormHandler {
 	
 	TenJava instance;
 	
-	public LightningStormPlayer (TenJava t) {
+	public LightningStormHandler (TenJava t) {
 		this.instance = t;
+		LightningStormPlayers();
 		
 	}
 	
@@ -26,6 +25,8 @@ public class LightningStormPlayer {
 
 
 		}
+		instance.getLogger().info("starting storm");
+		new Thread(new StormPlayer(instance.getServer().getOnlinePlayers())).run();
 		
 	}
 
